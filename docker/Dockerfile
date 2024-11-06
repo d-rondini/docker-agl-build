@@ -6,6 +6,8 @@ ENV AGL_MANIFEST="quillback_17.1.2.xml"
 ENV AGL_MACHINE="ebisu"
 ENV AGL_FEATURE="agl-demo"
 ENV AGL_RECIPE="agl-ivi-demo-qt"
+ENV GIT_USER="AGL builder"
+ENV GIT_EMAIL="info@samplesw.com"
 
 # Support environment variables
 ENV LANG="en_US.UTF-8"
@@ -43,6 +45,10 @@ RUN mkdir -p $AGL_TOP && \
 # Copy known_hosts to automatically enable download from github
 COPY --chown=builder:builder known_hosts /etc/ssh/ssh_known_hosts
 COPY --chown=builder:builder Makefile $AGL_TOP/$AGL_BRANCH/Makefile
+
+# Setup git configuration
+RUN git config --global user.email "$GIT_EMAIL"
+RUN git config --global user.name "$GIT_USER"
 
 # Setup git repo in order to use local manifest
 WORKDIR $AGL_TOP/$AGL_BRANCH
