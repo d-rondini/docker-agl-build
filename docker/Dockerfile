@@ -49,6 +49,8 @@ COPY --chown=builder:builder Makefile $AGL_TOP/$AGL_BRANCH/Makefile
 # Setup git configuration
 RUN git config --global user.email "$GIT_EMAIL"
 RUN git config --global user.name "$GIT_USER"
+# Avoid repo to always ask for colors interactively
+RUN git config --global color.ui false
 
 # Setup git repo in order to use local manifest
 WORKDIR $AGL_TOP/$AGL_BRANCH
