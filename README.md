@@ -18,12 +18,14 @@ To prepare the build, create a build directory with 2 sub-directories:
 These sub-directories should be mounted as volumes when running docker container.
 
 The following variables control AGL parameters like version, output target and machine, and can be set as environment variables in Docker. Please refer to [AGL documentation](https://docs.automotivelinux.org/en/pike/#) for details.
+
 - *AGL_BRANCH* The AGL version code name (default = "quillback").
 - *AGL_MACHINE* The AGL target machine (default = "ebisu", which is Renesas R-Car Evaluation Board)
 - *AGL_FEATURE* AGL feature(s) to be loaded for build (default = "agl-demo")
 - *AGL_RECIPE* AGL image recipe to be built (default = "agl-ivi-demo-qt")
 
 Please also override *git* user and email variables.
+
 - *GIT_USER*
 - *GIT_EMAIL*
 

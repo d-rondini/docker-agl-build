@@ -55,4 +55,4 @@ RUN git config --global color.ui false
 # Setup git repo in order to use local manifest
 WORKDIR $AGL_TOP/$AGL_BRANCH
 
-CMD make AGL_MACHINE=${AGL_MACHINE} FEATURE=${AGL_FEATURE} RECIPE=${AGL_RECIPE} BRANCH=${AGL_BRANCH}
+CMD make AGL_MACHINE=${AGL_MACHINE} FEATURE=${AGL_FEATURE} RECIPE=${AGL_RECIPE} BRANCH=${AGL_BRANCH} all
